@@ -1,53 +1,21 @@
-```plaintext
-+------------------+       +------------------+      +--------------+
-|    ParkingLot    |-------|     GateEntry    |      |   Payment    |
-+------------------+       +------------------+      +--------------+
-| - parkingLot: Map<string, ParkingFloor>        |      |              |
-| - paymentFactory: PaymentFactory               |      |              |
-+------------------+       +------------------+      |              |
-| + parkVehicle(vehicle: Vehicle): boolean       |      | + process(amount: int): boolean |
-| + processPayment(amount: int): boolean         |      +--------------+
-| + isFull(): boolean                            |
-+-----------------------------------------------+
+```plantuml
+@startuml
+class Person {
+  + name: String
+  + age: Int
+  + address: String
+}
 
-+------------------+       +--------------+
-|   ParkingSpot    |       |   Vehicle    |
-+------------------+       +--------------+
-| - size: int      |       |              |
-| - occupied: boolean     |       |              |
-| - vehicle: Vehicle      |       |              |
-+------------------+       +--------------+
-| + isOccupied(): boolean |       |              |
-| + occupy(vehicle: Vehicle): void           |
-| + release(): void                            |
-+-----------------------------------------------+
+class Employee extends Person {
+  + salary: Double
+  + department: String
+}
 
-+------------------+       +---------------------+
-|    ParkingFloor  |       |    PaymentFactory   |
-+------------------+       +---------------------+
-| - floorNumber: string      |       + choosePaymentMethod(): Payment   |
-| - spots: List<ParkingSpot>                   |
-+------------------+       +---------------------+
+class Customer extends Person {
+  + creditScore: Int
+  + purchaseHistory: List<Purchase>
+}
 
-+------------------+       +------------------+
-|    PaymentOption |       |    Vehicle       |
-+------------------+       +------------------+
-| - type: PaymentType     |       |              |
-+------------------+       +------------------+
-| + process(amount: int): boolean |       |              |
-+------------------+       +------------------+
-
-+------------------+       +------------------+
-|   PaymentType    |       |  ParkingStrategy |
-+------------------+       +------------------+
-| CARD             |       |                  |
-| CASH             |       + findBestSpot(): ParkingSpot |
-+------------------+       +------------------+
-
-+------------------+       +------------------+
-|     Payment      |       |  Vehicle         |
-+------------------+       +------------------+
-| - amount: int    |       |                  |
-+------------------+       +------------------+
-| + processPayment(amount: int): boolean       |
-+-----------------------------------------------+
+Person "1" --> "0..*" Employee
+Person "1" --> "0..*" Customer
+@enduml
