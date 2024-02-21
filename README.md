@@ -1,4 +1,5 @@
 ```mermaid
+classDiagram
 class ParkingLot {
   - parkingLot: Map<string, ParkingFloor>
   - paymentFactory: PaymentFactory
