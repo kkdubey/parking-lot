@@ -1,5 +1,4 @@
 ```mermaid
-classDef default fill:#fff,stroke:#333,stroke-width:2px;
 class ParkingLot {
   - parkingLot: Map<string, ParkingFloor>
   - paymentFactory: PaymentFactory
