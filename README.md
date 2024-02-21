@@ -58,4 +58,4 @@ ParkingFloor "1" -- "1" PaymentFactory
 Payment "1" -- "1" PaymentOption
 PaymentOption "1" -- "1" PaymentType
 ParkingStrategy "1" -- "1" ParkingSpot
-```
+```mermaid
