@@ -1,3 +1,4 @@
+```mermaid
 classDiagram
   class ParkingLot {
     - parkingLot: Map<string, ParkingFloor>
@@ -57,3 +58,4 @@ classDiagram
   PaymentOption <|-- PaymentType
   ParkingSpot <|-- Vehicle
   ParkingStrategy <|-- ParkingSpot
+```
